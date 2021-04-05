@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Trigonométrica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Calculadora Trigonométrica</h1>
+        <div>
+            <h2>O que é a Calculadora Trigonométrica</h2>
+            <p>A Calculadora Trigonométrica é uma ferramenta para ajudar com a trigonometria. Com ela é possível descobrir o tamanho dos lados de um triângulo retângulo ou seus ângulos.</p>
+            <h2>Como funciona a calculadora Trigonométrica</h2>
+            <p>Para usá-la, você só precisa colocar os dados conhecidos, com pelo menos 2 informações ela consegue te dar as outra duas.</p>
+        </div>
+        <div class="Calculadora">
+            <h2>Calculadora</h2>
+            <h3>Cateto Oposto</h3>
+            <input id="cateto_o" type="number" placeholder="00.00" required autofocus>
+            <h3>Cateto Adjacente</h3>
+            <input id="cateto_a" type="number" placeholder="00.00" required autofocus>
+            <h3>Hipotenusa</h3>
+            <input id="hipotenusa" type="number" placeholder="00.00" required autofocus>
+            <h3>Angulo (theta)</h3>
+            <input id="angulo" type="number" placeholder="00.00" required autofocus>
+            <div>
+                <button>Processar</button>
+            </div>
+        </div>
+        <div class="botao-aqui">
+            <h3>Veja os codigos</h3>
+            <p>Acesse os codigos em Javascript e phyton da Calculadora Trigonométrica pelo meu repositório no github e no google collaboratory:</p>
+            <div>
+                <p><a href="https://github.com/Enzo-Rom/Enzo-Rom.github.io/blob/01a0879a305d1b219e3ccaf7b89348bb8e636588/CTrigonometrica.py"><img src="https://www.pofilo.fr/img/SPOF-github/github1600.png" alt="GitHub">GitHub</a></p>
+                <p><a href="https://colab.research.google.com/drive/1XadzoOxumRhOu1ELyTM99Qur3XNnnzd7"><img src="https://colab.research.google.com/img/colab_favicon_256px.png#right" alt="Google Colaboratory">Google Collab</a></p>
+            </div>
+        </div>
+        <div>
+            <h2>Partes do triângulo:</h2>
+            <img src="https://conhecimentocientifico.r7.com/wp-content/uploads/2020/06/hipotenusa-o-que-e-definicao-caracteristicas-e-teorema-de-pitagoras.png" alt="triangulo retangulo">
+        </div>
+    <script>
+        function processar() {
+        var cateto_o = Number(document.querySelector('#cateto_o').value);
+        var cateto_a = Number(document.querySelector('#cateto_a').value);
+        var hipotenusa = Number(document.querySelector('#hipotenusa').value);
+        var angulo = Number(document.querySelector('#angulo').value);
+        var anguloa = angulo * (Math.PI/180)
+        var seno = Math.sin(anguloa)
+        var cosseno = Math.cos(anguloa)
+        var tangente = Math.tan(anguloa)
+        if (angulo == 0){
+          if (cateto_a && hipotenusa > 0){
+            cateto_o = Math.sqrt(hipotenusa**2 - cateto_a**2)
+            cateto_o = cateto_o.toFixed(3)
+            angulo = Math.acos(cateto_a/hipotenusa)
+            anguloa = angulo/(Math.PI/180)
+            anguloa = anguloa.toFixed(3)
+            alert ('O valor do cateto oposto é de aproximadamente ' + cateto_o + ' e o valor de theta é de aproximadamente ' + anguloa)
+          }
+          else if (cateto_o && hipotenusa > 0){
+            cateto_a = Math.sqrt(hipotenusa**2 - cateto_o**2)
+            cateto_a = cateto_a.toFixed(3)
+            angulo = Math.asin(cateto_o/hipotenusa)
+            anguloa = angulo/(Math.PI/180)
+            anguloa = anguloa.toFixed(3)
+            alert ('O valor do cateto adjacente é de aproximadamente ' + cateto_a + ' e o valor de theta é de aproximadamente ' + anguloa)
+          }
+          else if (cateto_o && cateto_a > 0){
+            hipotenusa = Math.sqrt(cateto_o**2 + cateto_a**2)
+            hipotenusa = hipotenusa.toFixed(3)
+            angulo = Math.atan(cateto_o/cateto_a)
+            anguloa = angulo/(Math.PI/180)
+            anguloa = anguloa.toFixed(3)
+            alert ('O valor da hipotenusa é de aproximadamente ' + hipotenusa + ' e o valor de theta é de aproximadamente ' + anguloa)
+          }
+        }
+        else if (hipotenusa > 0){
+          cateto_o = hipotenusa*seno + 0.000000000000001
+          cateto_o = cateto_o.toFixed(3)
+          cateto_a = hipotenusa*cosseno + 0.000000000000001
+          cateto_a = cateto_a.toFixed(3)
+          alert ('O valor do cateto oposto é de aproximadamente ' + cateto_o + ' e o valor do cateto adjacente é de aproximadamente ' + cateto_a)
+        }
+        else if (cateto_a > 0){
+          cateto_o = cateto_a * tangente -0.000000000000001
+          cateto_o = cateto_o.toFixed(3)
+          hipotenusa = cateto_a * (cosseno ** -1) -0.000000000000001
+          hipotenusa = hipotenusa.toFixed(3)
+          alert ('O valor do cateto oposto é de aproximadamente ' + cateto_o + ' e o valor da hipotenusa é de aproximadamente ' + hipotenusa)
+        }
+        else if (cateto_o > 0){
+          cateto_a = cateto_o * (tangente ** -1)
+          cateto_a = cateto_a.toFixed(3)
+          hipotenusa = cateto_o * (seno ** -1) -0.000000000000001
+          hipotenusa = hipotenusa.toFixed(3)
+          alert ('O valor do cateto adjacente é de aproximadamente ' + cateto_a + ' e o valor da hipotenusa é de aproximadamente ' + hipotenusa)
+        }
+      }
+      converterBotton = document.querySelector('button');
+      converterBotton.onclick = processar;
+      </script>
+</body>
+</html>
