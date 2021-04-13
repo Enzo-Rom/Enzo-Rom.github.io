@@ -43,7 +43,8 @@ ul {
     font-size: var(--font-size-padrao);
 }
 img {
-    max-width: 90%;
+    max-width: 95%;
+    padding: 1rem;
 }
 div {
     background-color: rgb(146, 230, 255);
@@ -51,16 +52,16 @@ div {
     border-right: solid  var(--cor-fundo1);
     border-bottom: solid var(--cor-fundo1);
 }
-.botao-aqui h3 {
+.linkButtonWebs h3 {
     padding: 0.5rem;
     margin-bottom: 0;
 }
-.botao-aqui div{
+.linkButtonWebs div{
     display: flex;
     justify-content: center;
     border: none;
 }
-.botao-aqui p a {
+.linkButtonWebs p a {
     display: flow-root;
     text-decoration: none;
     margin: 0 5px;
@@ -101,7 +102,7 @@ button {
     img {
         max-width: 30rem;
     }
-    .botao-aqui p a {
+    .linkButtonWebs p a {
         max-width: 40%;
     }
 }
