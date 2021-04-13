@@ -91,7 +91,10 @@ button {
     width: 10rem;
     height: 2rem;
     font-size: 1.5rem;
-    background-color:rgba(0, 183, 255, 0.267);
+    background-color:rgba(0, 183, 255, 0.349);
+    border: transparent;
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px 1px rgba(2, 0, 37, 0.836);
 }
 
 @media only sceen and (min-width: 680px) {
