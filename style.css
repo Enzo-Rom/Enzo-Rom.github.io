@@ -42,8 +42,10 @@ p {
 ul {
     font-size: var(--font-size-padrao);
 }
-img {
+img{
     max-width: 95%;
+}
+.ITR {
     padding: 1rem;
 }
 div {
