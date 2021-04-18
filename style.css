@@ -34,6 +34,7 @@ h3 {
     color: var(--cor-fonte1);
     max-width: var(--normal-max-width);
     padding: 0.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
 }
 p {
     padding-left: 0.5rem;
@@ -43,16 +44,22 @@ ul {
     font-size: var(--font-size-padrao);
 }
 img{
-    max-width: 95%;
+    max-width: 100%;
+    border-bottom-right-radius: 1rem;
 }
 .ITR {
     padding: 1rem;
+    border: none;
 }
 div {
     background-color: rgb(146, 230, 255);
     max-width: var(--normal-max-width);
     border-right: solid  var(--cor-fundo1);
     border-bottom: solid var(--cor-fundo1);
+    border-bottom-right-radius: 1rem;
+}
+.divisao{
+    border: none;
 }
 .linkButtonWebs h3 {
     padding: 0.5rem;
