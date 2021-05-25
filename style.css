@@ -105,6 +105,7 @@ button {
     border: transparent;
     border-radius: 8px;
     box-shadow: 2px 2px 3px 1px rgba(2, 0, 37, 0.836);
+    cursor: pointer;
 }
 
 @media only sceen and (min-width: 680px) {
