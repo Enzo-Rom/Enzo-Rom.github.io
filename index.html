@@ -55,7 +55,11 @@
         var seno = Math.sin(anguloa)
         var cosseno = Math.cos(anguloa)
         var tangente = Math.tan(anguloa)
-        if (angulo == 0){
+        if (angulo && cateto_a && cateto_o > 0){
+            hipotenusa = Math.sqrt(cateto_o**2 + cateto_a**2 - 2*cateto_o*cateto_a*cosseno)
+            alert ('O valor da hipotenusa é de aproximadamente ' + hipotenusa)
+        }
+        else if (angulo == 0){
           if (cateto_a && hipotenusa > 0){
             cateto_o = Math.sqrt(hipotenusa**2 - cateto_a**2)
             cateto_o = cateto_o.toFixed(3)
