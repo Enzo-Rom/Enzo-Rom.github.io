@@ -57,6 +57,7 @@
         var tangente = Math.tan(anguloa)
         if (angulo && cateto_a && cateto_o > 0){
             hipotenusa = Math.sqrt(cateto_o**2 + cateto_a**2 - 2*cateto_o*cateto_a*cosseno)
+            hipotenusa = hipotenusa.toFixed(3)
             alert ('O valor da hipotenusa é de aproximadamente ' + hipotenusa)
         }
         else if (angulo == 0){
